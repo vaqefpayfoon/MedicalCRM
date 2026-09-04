@@ -5,33 +5,63 @@
 .section-bg {
   background: #f1f6f9;
 }
-body {
-  font-family: "Mulish", sans-serif;
-  font-weight: normal;
+@font-face {
+  font-family: 'TanhaFont';
+  src: url('./fonts/Tanha.woff2') format('woff2'),
+       url('./fonts/Tanha.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
-  font-size: 16px;
+  font-display: swap
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Work Sans", sans-serif;
-  color: #1a213d;
-  margin-top: 0px;
+
+@font-face {
+  font-family: 'TanhaFont';
+  src: url('./fonts/Tanha.woff2') format('woff2'),
+       url('./fonts/Tanha.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
-  font-weight: 500;
-  text-transform: normal;
+  font-display: swap
 }
-p {
-  font-family: "Mulish", sans-serif;
-  color: #6b5a5a;
-  font-size: 16px;
-  line-height: 30px;
-  margin-bottom: 15px;
-  font-weight: 300;
-  line-height: 1.6;
+
+@font-face {
+  font-family: 'TanhaNumbers';
+  src: url('./fonts/Farsi-Digits/Tanha-FD.woff') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+    --font-family-base: "TanhaFont";
+    --font-family-sans-serif: "TanhaFont";
+    --font-family-numeric: "TanhaNumbers";
+}
+ body,
+ table,
+ thead,
+ th,
+ tr,
+ td,
+ p,
+ span,
+ div,
+ nav,
+ ul,
+ li,
+ a,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ button,
+ input,
+ textarea,
+ select,
+ option,
+ label {
+  font-family: 'TanhaFont', 'TanhaNumbers' !important;
+  font-weight: bolder !important;
 }
 .f-right {
   float: right;
@@ -660,7 +690,7 @@ hr {
   border-radius: 0;
 }
 .border-btn:hover {
-  color: #4db7fe;
+  color: #cefe4d;
 }
 .border-btn:hover::before {
   transform: scaleY(1);
@@ -1047,12 +1077,12 @@ hr {
   position: relative;
 }
 .header-area .main-header .main-menu ul li a i {
-  color: #fff;
+  color: #cefe4d;
   margin-left: 2px;
   font-size: 12px;
 }
 .header-area .main-header .main-menu ul li:hover > a {
-  color: #4db7fe;
+  color: #cefe4d;
 }
 .header-area .main-header .main-menu ul ul.submenu {
   position: absolute;
@@ -1077,10 +1107,10 @@ hr {
 .header-area .main-header .main-menu ul ul.submenu > li > a {
   padding: 6px 10px !important;
   font-size: 16px;
-  color: #fff;
+  color: #cefe4d;
 }
 .header-area .main-header .main-menu ul ul.submenu > li > a:hover {
-  color: #fff;
+  color: #cefe4d;
   background: none;
   padding-left: 13px !important;
 }
@@ -1139,7 +1169,7 @@ hr {
   }
 }
 .header-sticky.sticky-bar .header-btn {
-  color: #4db7fe;
+  color: #cefe4d;
 }
 .mobile_menu {
   position: absolute;
@@ -1218,7 +1248,7 @@ hr {
   }
 }
 .slider-area .hero-caption span {
-  color: #31ff7a;
+  color: #cefe4d;
   font-size: 60px;
   line-height: 1.2;
   font-weight: 400;
@@ -1234,7 +1264,7 @@ hr {
 .slider-area .hero-caption h1 {
   font-size: 60px;
   font-weight: 600;
-  color: #fff;
+  color: #cefe4d;
   line-height: 1.3;
   margin-bottom: 7px;
 }
@@ -1265,7 +1295,7 @@ hr {
   }
 }
 .slider-area .hero-caption p {
-  color: #fff;
+  color: #cefe4d;
   font-size: 22px;
   margin-bottom: 34px;
   font-weight: 300;
