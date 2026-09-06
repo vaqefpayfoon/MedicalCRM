@@ -6,61 +6,63 @@
   background: #f1f6f9;
 }
 @font-face {
-  font-family: 'TanhaFont';
-  src: url('./fonts/Tanha.woff2') format('woff2'),
-       url('./fonts/Tanha.woff') format('woff');
+  font-family: "TanhaFont";
+  src:
+    url("./fonts/Tanha.woff2") format("woff2"),
+    url("./fonts/Tanha.woff") format("woff");
   font-weight: 400;
   font-style: normal;
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'TanhaFont';
-  src: url('./fonts/Tanha.woff2') format('woff2'),
-       url('./fonts/Tanha.woff') format('woff');
+  font-family: "TanhaFont";
+  src:
+    url("./fonts/Tanha.woff2") format("woff2"),
+    url("./fonts/Tanha.woff") format("woff");
   font-weight: 700;
   font-style: normal;
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'TanhaNumbers';
-  src: url('./fonts/Farsi-Digits/Tanha-FD.woff') format('woff2');
+  font-family: "TanhaNumbers";
+  src: url("./fonts/Farsi-Digits/Tanha-FD.woff") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 :root {
-    --font-family-base: "TanhaFont";
-    --font-family-sans-serif: "TanhaFont";
-    --font-family-numeric: "TanhaNumbers";
+  --font-family-base: "TanhaFont";
+  --font-family-sans-serif: "TanhaFont";
+  --font-family-numeric: "TanhaNumbers";
 }
- body,
- table,
- thead,
- th,
- tr,
- td,
- p,
- span,
- div,
- nav,
- ul,
- li,
- a,
- h1,
- h2,
- h3,
- h4,
- h5,
- h6,
- button,
- input,
- textarea,
- select,
- option,
- label {
-  font-family: 'TanhaFont', 'TanhaNumbers' !important;
+body,
+table,
+thead,
+th,
+tr,
+td,
+p,
+span,
+div,
+nav,
+ul,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+textarea,
+select,
+option,
+label {
+  font-family: "TanhaFont", "TanhaNumbers" !important;
   font-weight: bolder !important;
 }
 .f-right {
@@ -5079,7 +5081,9 @@ del {
   font-size: 14px;
   font-weight: 600;
   text-shadow: none;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
 .hero-content__button:hover {
@@ -5174,7 +5178,9 @@ del {
   font-family: "Work Sans", sans-serif;
   font-size: 15px;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .video-copy__button:hover {
@@ -5193,4 +5199,154 @@ del {
   .video-copy h2 {
     font-size: 28px;
   }
+}
+
+.modal-content {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 900px;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #1a3a5c 0%, #2d6a9f 100%);
+  color: white;
+  border: none;
+  padding: 25px 30px;
+}
+
+.modal-header .close {
+  color: white;
+  opacity: 0.8;
+  text-shadow: none;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-header .close:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+
+.modal-header .modal-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.modal-header .modal-title i {
+  margin-left: 10px;
+}
+
+.modal-body {
+  padding: 30px;
+  background: #f8f9fa;
+}
+
+.modal-body .feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-body .feature-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-body .feature-list li:last-child {
+  border-bottom: none;
+}
+
+.modal-body .feature-list li i {
+  color: #2d6a9f;
+  font-size: 1.2rem;
+  width: 25px;
+}
+
+.modal-footer {
+  background: white;
+  border: none;
+  padding: 20px 30px;
+  gap: 10px;
+}
+
+.modal-footer .btn {
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-weight: 600;
+}
+
+.btn-primary-custom {
+  background: linear-gradient(135deg, #2d6a9f 0%, #1a3a5c 100%);
+  color: white;
+  border: none;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(45, 106, 159, 0.4);
+  color: white;
+}
+
+.btn-outline-custom {
+  border: 2px solid #2d6a9f;
+  color: #2d6a9f;
+  background: transparent;
+}
+
+.btn-outline-custom:hover {
+  background: #2d6a9f;
+  color: white;
+}
+
+/* Modal Animation */
+.modal.fade .modal-dialog {
+  transform: scale(0.8) translateY(-50px);
+  transition: all 0.3s ease;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* Trigger Button */
+.demo-btn {
+  background: linear-gradient(135deg, #2d6a9f 0%, #1a3a5c 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.demo-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(45, 106, 159, 0.4);
+  color: white;
+}
+
+.demo-btn i {
+  margin-left: 10px;
+}
+
+.container-center {
+  text-align: center;
+}
+
+.badge-modal {
+  background: #2d6a9f;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-top: 5px;
 }

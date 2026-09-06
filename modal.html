@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Example - Medical CRM</title>
+    
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome (optional, for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        /* Custom Modal Styles */
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2d6a9f 100%);
+            color: white;
+            border: none;
+            padding: 25px 30px;
+        }
+        
+        .modal-header .close {
+            color: white;
+            opacity: 0.8;
+            text-shadow: none;
+            font-size: 2rem;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .modal-header .close:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-header .modal-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .modal-header .modal-title i {
+            margin-left: 10px;
+        }
+        
+        .modal-body {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .modal-body .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .modal-body .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .modal-body .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .modal-body .feature-list li i {
+            color: #2d6a9f;
+            font-size: 1.2rem;
+            width: 25px;
+        }
+        
+        .modal-footer {
+            background: white;
+            border: none;
+            padding: 20px 30px;
+            gap: 10px;
+        }
+        
+        .modal-footer .btn {
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-weight: 600;
+        }
+        
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #2d6a9f 0%, #1a3a5c 100%);
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(45, 106, 159, 0.4);
+            color: white;
+        }
+        
+        .btn-outline-custom {
+            border: 2px solid #2d6a9f;
+            color: #2d6a9f;
+            background: transparent;
+        }
+        
+        .btn-outline-custom:hover {
+            background: #2d6a9f;
+            color: white;
+        }
+        
+        /* Modal Animation */
+        .modal.fade .modal-dialog {
+            transform: scale(0.8) translateY(-50px);
+            transition: all 0.3s ease;
+        }
+        
+        .modal.show .modal-dialog {
+            transform: scale(1) translateY(0);
+        }
+        
+        /* Trigger Button */
+        .demo-btn {
+            background: linear-gradient(135deg, #2d6a9f 0%, #1a3a5c 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(45, 106, 159, 0.4);
+            color: white;
+        }
+        
+        .demo-btn i {
+            margin-left: 10px;
+        }
+        
+        body {
+            font-family: 'IRANSans', Tahoma, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .container-center {
+            text-align: center;
+        }
+        
+        .badge-modal {
+            background: #2d6a9f;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-center">
+    <!-- Trigger Button -->
+    <button class="demo-btn" data-toggle="modal" data-target="#demoModal">
+        <i class="fas fa-rocket"></i> درخواست دمو
+    </button>
+    
+    <p style="margin-top:20px; color:#666;">برای مشاهده مودال کلیک کنید</p>
+</div>
+
+<!-- ============================================= -->
+<!-- THE MODAL -->
+<!-- ============================================= -->
+<div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="demoModalLabel">
+                    <i class="fas fa-crown"></i> 
+                    درخواست دموی رایگان
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h4 style="font-weight:700; color:#1a3a5c; margin-bottom:15px;">
+                            چرا Medical CRM؟
+                        </h4>
+                        <ul class="feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>مدیریت هوشمند مشتریان و مراکز درمانی</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>پیگیری خودکار سفارشات و قراردادها</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>گزارش‌های تحلیلی لحظه‌ای</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>پشتیبانی ۲۴/۷ اختصاصی</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>یکپارچگی با سیستم‌های حسابداری</span>
+                            </li>
+                        </ul>
+                        <div class="badge-modal">
+                            <i class="fas fa-star"></i> بیش از ۵۰۰ شرکت فعال
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <!-- Form inside modal -->
+                        <form id="demoForm">
+                            <div class="form-group">
+                                <label style="font-weight:600;">نام و نام خانوادگی</label>
+                                <input type="text" class="form-control" placeholder="مثال: علی محمدی" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-weight:600;">شماره تماس</label>
+                                <input type="tel" class="form-control" placeholder="۰۹۱۲xxx" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-weight:600;">نام شرکت</label>
+                                <input type="text" class="form-control" placeholder="نام شرکت تجهیزات پزشکی">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-custom" data-dismiss="modal">
+                    <i class="fas fa-times"></i> انصراف
+                </button>
+                <button type="button" class="btn btn-primary-custom" id="submitDemo">
+                    <i class="fas fa-paper-plane"></i> ارسال درخواست
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- ============================================= -->
+<!-- SUCCESS MODAL (Second Modal) -->
+<!-- ============================================= -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content" style="text-align:center; padding:20px;">
+            <div style="font-size:4rem; color:#28a745; margin:10px 0;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h4 style="font-weight:700; color:#1a3a5c;">درخواست با موفقیت ثبت شد!</h4>
+            <p style="color:#666;">کارشناسان ما در اسرع وقت با شما تماس می‌گیرند.</p>
+            <button type="button" class="btn btn-primary-custom" data-dismiss="modal" style="margin-top:10px;">
+                متوجه شدم
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================= -->
+<!-- SCRIPTS -->
+<!-- ============================================= -->
+<!-- jQuery first, then Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        
+        // Option 1: Simple trigger with validation
+        $('#submitDemo').on('click', function() {
+            // Get form values
+            var name = $('#demoForm input[type="text"]:eq(0)').val();
+            var phone = $('#demoForm input[type="tel"]').val();
+            
+            // Basic validation
+            if (!name || name.length < 2) {
+                alert('لطفا نام و نام خانوادگی خود را وارد کنید');
+                return;
+            }
+            
+            if (!phone || phone.length < 10) {
+                alert('لطفا شماره تماس معتبر وارد کنید');
+                return;
+            }
+            
+            // Close first modal
+            $('#demoModal').modal('hide');
+            
+            // Show success modal after delay
+            setTimeout(function() {
+                $('#successModal').modal('show');
+            }, 400);
+        });
+        
+        // Option 2: Submit on Enter key
+        $('#demoForm input').on('keypress', function(e) {
+            if (e.which === 13) {
+                e.preventDefault();
+                $('#submitDemo').click();
+            }
+        });
+        
+        // Option 3: Reset form when modal is closed
+        $('#demoModal').on('hidden.bs.modal', function() {
+            $('#demoForm')[0].reset();
+        });
+        
+        // Console log for debugging
+        console.log('✅ Modal system ready!');
+    });
+</script>
+
+</body>
+</html>
